@@ -1,8 +1,9 @@
 while (true) {
-    let num = Math.round(Math.random());
-    console.log('Я загадал число:', num);
+    
+    let n = Math.round(Math.random()*1000);
+    console.log('Я загадал число:', n);
 
-    let guessNum = prompt('Введите ваше число (0 или 1, q - выход):');
+    let guessNum = prompt('Введите ваше число (от 0 до 999, q - выход):');
     console.log('Пользователь ввел:', +guessNum);
 
     if (guessNum === 'q') {
@@ -10,12 +11,19 @@ while (true) {
         break; 
     }
     if (isNaN(guessNum)) {
-        alert('Вы ввели не число!')
-    } else if (+guessNum != 0 && +guessNum != 1){
-        alert('Вы ввели не 0 и не 1!')
-    } else if (+guessNum === num) {
+        alert('Вы ввели не число!');
+    } else if (+guessNum >= 1000){
+        alert('Вы ввели число, больше 999!');
+    } else if (+guessNum < 0){
+        alert('Вы ввели число, меньше 0!');
+    } else if (+guessNum === n) {
         alert('Вы угадали!');
     } else {
-        alert('Вы не угадали!');
+        if (+guessNum > n) {
+            alert('Вы не угадали! Ваше число больше.');
+        } else {
+            alert('Вы не угадали! Ваше число меньше.');
+        }
+        
     }
 }
