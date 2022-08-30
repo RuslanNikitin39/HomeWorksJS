@@ -106,15 +106,9 @@ class GoodsList{
 
 
 class BasketGood extends Good {
-    constructor(good, amount) {
-        super(good);
+    constructor(id, name, description, sizes, price, available, amount) {
+        super(id, name, description, sizes, price, available);
         this.amount = amount;
-        this.id = good.id;
-        this.name  =  good.name;
-        this.description = good.description;
-        this.sizes = good.sizes;
-        this.price = good.price;
-        this.available = good.available;
     }
 }
 
