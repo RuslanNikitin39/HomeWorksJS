@@ -4,7 +4,7 @@ let nomber = Math.round(Math.random()*100);
 
 let attemp = 1;
 
-async function runGame() {
+async function runGame(attemp) {
     //console.log(nomber);
     attemp = 1;
     const cmd = await rl.question('Введите ваше число: '); 
@@ -33,11 +33,11 @@ async function runGame() {
         
         attemp++;
 
-        runGame();
+        runGame(attemp);
    // })
 }
 
 
 console.log("Я загадал число от 0 до 100. Угадайте. Для завершения введите 'quit'.");
 
-runGame();
+runGame(attemp);
